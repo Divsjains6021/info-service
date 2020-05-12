@@ -20,7 +20,12 @@ public class PropertyInfoServiceResource
 
         return PropDetailList.builder().propertyDetails(
                 propIDs.getPropIDs().stream()
-                        .map(propID -> PropertyDetails.builder().propID(propID).propName(propID + "-" + "Name").propPrice(4500000).build())
+                        .map(propID -> PropertyDetails.builder()
+                                .propID(propID)
+                                .propName(propID + "-" + "Name")
+                                .propPrice(4500000)
+                                .area("Bellandur, Bangalore")
+                                .build())
                         .collect(Collectors.toList())
         ).build();
     }
