@@ -6,10 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class PropertyDetails
-{
-
-
+public class PropFilterableSortableData {
     @JsonProperty("prop_id")
     private String propID;
     @JsonProperty("prop_name")
@@ -27,11 +24,11 @@ public class PropertyDetails
     @JsonProperty("area")
     private String area;
 
-    public PropertyDetails() {
+    public PropFilterableSortableData(){
 
     }
 
-    public PropertyDetails(String propID, String propName, double propPrice, double max_budget, int bedroom, String saleType, String constructionStatus, String area) {
+    public PropFilterableSortableData(String propID, String propName, double propPrice, double max_budget, int bedroom, String saleType, String constructionStatus, String area) {
         this.propID = propID;
         this.propName = propName;
         this.propPrice = propPrice;

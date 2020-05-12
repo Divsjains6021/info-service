@@ -25,6 +25,10 @@ public class PropertyInfoServiceResource
                                 .propName(propID + "-" + "Name")
                                 .propPrice(4500000)
                                 .area("Bellandur, Bangalore")
+                                .bedroom(1)
+                                .constructionStatus("ready to move")
+                                .max_budget(5000000)
+                                .saleType("new")
                                 .build())
                         .collect(Collectors.toList())
         ).build();
