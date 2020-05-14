@@ -5,15 +5,13 @@ import com.propertydekho.infoservice.models.PropIDs;
 import com.propertydekho.infoservice.models.PropertyDetails;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/")
-public class PropertyInfoServiceResource
-{
+public class PropertyInfoServiceResource {
 
     @RequestMapping("/fetch-prop-details")
     public PropDetailList fetchPropDetails(@RequestBody PropIDs propIDs) {
@@ -25,9 +23,9 @@ public class PropertyInfoServiceResource
                                 .propName(propID + "-" + "Name")
                                 .propPrice(4500000)
                                 .area("Bellandur, Bangalore")
-                                .bedroom(1)
+                                .bedroom("1 bhk")
                                 .constructionStatus("ready to move")
-                                .max_budget(5000000)
+                                .budgetMax(5000000)
                                 .saleType("new")
                                 .build())
                         .collect(Collectors.toList())
