@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(scanBasePackages = "com.propertydekho.infoservice")
-//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class InfoServiceApplication {
 
 	public static void main(String[] args) {
