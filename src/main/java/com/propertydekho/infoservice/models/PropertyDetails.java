@@ -6,8 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class PropertyDetails
-{
+public class PropertyDetails {
 
 
     @JsonProperty("prop_id")

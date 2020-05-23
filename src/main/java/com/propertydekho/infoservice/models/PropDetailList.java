@@ -7,8 +7,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class PropDetailList
-{
+public class PropDetailList {
 
 
     private List<PropertyDetails> propertyDetails;

@@ -7,14 +7,13 @@ import java.util.List;
 
 @Data
 @Builder
-public class PropIDs
-{
+public class PropIDs {
     private List<String> propIDs;
 
     public PropIDs() {
     }
 
-    public PropIDs(List<String> propIDs){
+    public PropIDs(List<String> propIDs) {
         this.propIDs = propIDs;
     }
 }
