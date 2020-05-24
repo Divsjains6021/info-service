@@ -1,7 +1,7 @@
 package utilities;
 
 import com.google.gson.Gson;
-import com.propertydekho.infoservice.models.PropFilterableSortableData;
+import com.propertydekho.infoservice.entity.PropFilterableSortableData;
 
 import java.util.*;
 
@@ -16,40 +16,6 @@ public class Utilities {
 
     public Utilities() {
 
-        List<PropFilterableSortableData> props = new ArrayList<>();
-        setAreaMap();
-        setConstructionMap();
-        setSaleType();
-        setAreaPrice();
-
-
-        for (int i = 0; i < 10; i++) {
-            PropFilterableSortableData prop = PropFilterableSortableData.builder()
-                    .propID(getPropId(6))
-                    .area(getArea())
-                    .bedroom(getBedroom())
-                    .constructionStatus(consMap.get(getRandomIntegerBetweenRange(0, 1)))
-                    .saleType(saleMap.get(getRandomIntegerBetweenRange(0, 1)))
-                    .build();
-            String name = getPropName(prop);
-            prop.setPropName(name);
-
-            double price = getPropPrice(prop);
-            prop.setPropPrice(price);
-//            System.out.println(prop);
-            int sqft = getSqFt(prop);
-            prop.setSqft(sqft);
-            props.add(prop);
-
-
-        }
-        Gson gson = new Gson();
-        String json = gson.toJson(props);
-        System.out.println(json);
-    }
-
-    private String getPropName(PropFilterableSortableData prop) {
-        return null;
     }
 
     private double getPropPrice(PropFilterableSortableData prop) {
@@ -124,8 +90,39 @@ public class Utilities {
         areaPriceMap.put("Doddanekundi", 2800000.0);
     }
 
+    public List<PropFilterableSortableData> getProperties() {
+        List<PropFilterableSortableData> props = new ArrayList<>();
+        setAreaMap();
+        setConstructionMap();
+        setSaleType();
+        setAreaPrice();
+        for (int i = 0; i < 1; i++) {
+            PropFilterableSortableData prop = PropFilterableSortableData.builder()
+                    .propID(getPropId(6))
+                    .area(getArea())
+                    .bedroom(getBedroom())
+                    .constructionStatus(consMap.get(getRandomIntegerBetweenRange(0, 1)))
+                    .saleType(saleMap.get(getRandomIntegerBetweenRange(0, 1)))
+                    .build();
+            double price = getPropPrice(prop);
+            prop.setPropPrice(price);
+            prop.setSqft(getSqFt(prop));
+            prop.setPropName(getPropName(prop));
+            props.add(prop);
+        }
+        Gson gson = new Gson();
+        String json = gson.toJson(props);
+        System.out.println(json);
+
+        return props;
+    }
+
     public int getSqFt(PropFilterableSortableData prop) {
         String bedroom = prop.getBedroom();
-        return (Integer.parseInt(bedroom.split(" ")[0]) * 450 + getRandomIntegerBetweenRange(0, 500));
+        return (Integer.parseInt(bedroom.split(" ")[0]) * 450 + Utilities.getRandomIntegerBetweenRange(0, 500));
+    }
+
+    public String getPropName(PropFilterableSortableData prop) {
+        return prop.getBedroom() + " " + prop.getSqft() + " Sq-ft Flat for Sale in " + prop.getArea();
     }
 }

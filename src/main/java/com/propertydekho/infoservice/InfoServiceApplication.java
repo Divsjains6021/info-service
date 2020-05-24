@@ -1,9 +1,11 @@
 package com.propertydekho.infoservice;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.propertydekho.infoservice")
 public class InfoServiceApplication {
 
 	public static void main(String[] args) {
