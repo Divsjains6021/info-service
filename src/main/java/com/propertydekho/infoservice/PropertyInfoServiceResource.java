@@ -33,7 +33,6 @@ public class PropertyInfoServiceResource {
                                 .area("Bellandur, Bangalore")
                                 .bedroom("1 bhk")
                                 .constructionStatus("ready to move")
-                                .budgetMax(5000000)
                                 .saleType("new")
                                 .build())
                         .collect(Collectors.toList())
